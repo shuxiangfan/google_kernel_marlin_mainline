@@ -31,6 +31,7 @@ dtb-$(CONFIG_ARCH_QCOM)	+= msm8994-sony-xperia-kitakami-suzuran.dtb
 dtb-$(CONFIG_ARCH_QCOM)	+= msm8996-mtp.dtb
 dtb-$(CONFIG_ARCH_QCOM)	+= msm8996-oneplus3.dtb
 dtb-$(CONFIG_ARCH_QCOM)	+= msm8996-oneplus3t.dtb
+dtb-$(CONFIG_ARCH_QCOM) += msm8996-htc-marlin.dtb
 dtb-$(CONFIG_ARCH_QCOM)	+= msm8996-pmi8996-sony-xperia-tone-dora.dtb
 dtb-$(CONFIG_ARCH_QCOM)	+= msm8996-pmi8996-sony-xperia-tone-kagura.dtb
 dtb-$(CONFIG_ARCH_QCOM)	+= msm8996-pmi8996-sony-xperia-tone-keyaki.dtb
