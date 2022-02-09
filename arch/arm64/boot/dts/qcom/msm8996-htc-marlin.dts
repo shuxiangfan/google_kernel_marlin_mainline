@@ -18122,15 +18122,6 @@
 
 	chosen{
 		bootargs = "console=ttyHSL0,115200,n8";
-		
-		framebuffer {
-			compatible = "simple-framebuffer";
-			reg = <0xc0001000 (1920 * 2160 * 2)>;
-			width = <1920>;
-			height = <2160>;
-			stride = <(1920 * 2)>;
-			format = "r5g6b5";
-		};
 	};
 
 	bootloader_log {
