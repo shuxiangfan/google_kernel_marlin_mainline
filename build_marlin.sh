@@ -4,5 +4,5 @@ O=out \
 ARCH=arm64 \
 CROSS_COMPILE=aarch64-linux-gnu- \
 CROSS_COMPILE_ARM32=arm-none-eabi- "
-make ${args} defconfig
+make ${args} marlin_defconfig
 make ${args}
