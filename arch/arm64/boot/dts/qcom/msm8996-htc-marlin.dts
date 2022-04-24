@@ -17,6 +17,10 @@
 	interrupt-parent = <0x01>;
 	qcom,board-id = <0x80 0x00>;
 
+	aliases {
+		serial0 = "soc/uart9@7570000";
+	};
+	
     cpus {
 		#address-cells = <0x02>;
 		#size-cells = <0x00>;
@@ -239,6 +243,23 @@
 	};
 
 	chosen{
-		bootargs = "console=ttyHSL0,115200,n8 earlyprintk";
+		bootargs = "console=ttyMSM0,115200,n8 earlyprintk";
+		stdout-path = "serial0:115200n8";
+	};
+
+	soc{
+		uart9@7570000 {
+			compatible = "qcom,msm-uartdm-v1.4", "qcom,msm-uartdm";
+			reg = <0x7570000 0x1000 0x7544000 0x2b000>;
+			interrupts = <0x00 0x01 0x02>;
+			clocks = <0x4c 0xf8a61c96 0x4c 0x8caa5b4f>;
+			clock-names = "core", "iface";
+			#clock-cells = <1>;
+			pinctrl-names = "default", "sleep";
+			pinctrl-0 = <0xf5>;
+			pinctrl-1 = <0xf6>;
+			status = "okay";
+			phandle = <0xf4>;
+		};
 	};
 };
