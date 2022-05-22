@@ -11,14 +11,22 @@ maintainers:
 
 properties:
   compatible:
-    const: qcom,pmi8994-smbcharger
+    enum:
+      - qcom,pmi8950-smbcharger
+      - qcom,pmi8994-smbcharger
+      - qcom,pmi8996-smbcharger
 
   reg:
     maxItems: 1
 
-  # TODO: Add properties used
   monitored-battery:
-    description: phandle of battery characteristics node.
+    description: |
+      phandle of battery characteristics node.
+      The charger uses the following properties:
+      - charge-term-current-microamp
+      - voltage-max-design-microvolt
+      The voltage-max-design-microvolt property must be set.
+      See Documentation/devicetree/bindings/power/supply/battery.yaml
 
   # TODO: Improve interrupt descriptions
   interrupts:
@@ -115,6 +123,7 @@ examples:
         compatible = "simple-battery";
 
         charge-full-design-microamp-hours = <4070000>;
+        charge-term-current-microamp = <100000>;
         voltage-min-design-microvolt = <3400000>;
         voltage-max-design-microvolt = <4400000>;
     };
@@ -124,7 +133,7 @@ examples:
         #size-cells = <0>;
 
         charger@1000 {
-            compatible = "qcom,pmi8994-smbcharger";
+            compatible = "qcom,pmi8996-smbcharger";
             reg = <0x1000>;
 
             interrupts = <0x2 0x10 0x0 IRQ_TYPE_EDGE_BOTH>,

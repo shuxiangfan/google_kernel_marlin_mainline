@@ -125,6 +125,7 @@
 		};
 	};
 
+<<<<<<< HEAD
 	usb2_id: usb2-id {
 		compatible = "linux,extcon-usb-gpio";
 		id-gpio = <&pmi8994_gpios 6 GPIO_ACTIVE_HIGH>;
@@ -139,6 +140,8 @@
 		pinctrl-0 = <&usb3_vbus_det_gpio>;
 	};
 
+=======
+>>>>>>> origin
 	vph_pwr: vph-pwr-regulator {
 		compatible = "regulator-fixed";
 		regulator-name = "vph_pwr";
@@ -190,6 +193,22 @@
 	};
 };
 
+<<<<<<< HEAD
+=======
+&blsp2_i2c1 {
+	status = "okay";
+
+	fusb301: fusb301@21 {
+		compatible = "onnn,fusb301";
+		reg = <0x21>;
+		pinctrl-names = "default";
+		pinctrl-0 = <&fusb301_gpios>;
+		interrupt-parent = <&pmi8994_gpios>;
+		interrupts = <5 IRQ_TYPE_EDGE_FALLING>;
+	};
+};
+
+>>>>>>> origin
 &blsp1_uart2 {
 	label = "BT-UART";
 	status = "okay";
@@ -557,6 +576,7 @@
 		};
 	};
 
+<<<<<<< HEAD
 	usb3_vbus_det_gpio: pm8996_gpio22 {
 		pinconf {
 			pins = "gpio22";
@@ -567,6 +587,8 @@
 			power-source = <PM8994_GPIO_S4>; // 1.8V
 		};
 	};
+=======
+>>>>>>> origin
 };
 
 &pm8994_spmi_regulators {
@@ -586,12 +608,21 @@
 };
 
 &pmi8994_gpios {
+<<<<<<< HEAD
 	usb2_vbus_det_gpio: pmi8996_gpio6 {
 		pinconf {
 			pins = "gpio6";
 			function = PMIC_GPIO_FUNC_NORMAL;
 			input-enable;
 			bias-pull-down;
+=======
+	fusb301_gpios: pmi8996_gpio_5_gpio6 {
+		pinconf {
+			pins = "gpio5", "gpio6";
+			function = PMIC_GPIO_FUNC_NORMAL;
+			input-enable;
+			bias-pull-up;
+>>>>>>> origin
 			qcom,drive-strength = <PMIC_GPIO_STRENGTH_NO>;
 			power-source = <PM8994_GPIO_S4>; // 1.8V
 		};
@@ -1097,6 +1128,7 @@
 	vccq2-max-microamp = <450000>;
 };
 
+<<<<<<< HEAD
 &usb2 {
 	status = "okay";
 	extcon = <&usb2_id>;
@@ -1111,13 +1143,22 @@
 &usb3 {
 	status = "okay";
 	extcon = <&usb3_id>;
+=======
+&usb3 {
+	status = "okay";
+	extcon = <&fusb301>;
+>>>>>>> origin
 
 	dwc3@6a00000 {
 		phys = <&hsusb_phy1>;
 		phy-names = "usb2-phy";
 
+<<<<<<< HEAD
 		extcon = <&usb3_id>;
 		dr_mode = "peripheral";
+=======
+		extcon = <&fusb301>;
+>>>>>>> origin
 		maximum-speed = "high-speed";
 	};
 };

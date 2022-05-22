@@ -144,12 +144,19 @@
 	monitored-battery = <&battery>;
 };
 
+<<<<<<< HEAD
 &pmi8994_smbchg {
 	monitored-battery = <&battery>;
 };
 
+=======
+>>>>>>> origin
 &pmi8994_wled {
 	status = "okay";
+};
+
+&pmi8994_smbchg {
+	monitored-battery = <&battery>;
 };
 
 &q6asmdai {

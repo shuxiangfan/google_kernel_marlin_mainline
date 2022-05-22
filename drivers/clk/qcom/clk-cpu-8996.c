@@ -292,7 +292,7 @@ static int clk_cpu_8996_mux_determine_rate(struct clk_hw *hw,
 	struct clk_cpu_8996_mux *cpuclk = to_clk_cpu_8996_mux_hw(hw);
 	struct clk_hw *parent = cpuclk->pll;
 
-	if (cpuclk->pll_div &&req->rate < DIV_THRESHOLD) {
+	if (cpuclk->pll_div && req->rate < DIV_THRESHOLD) {
 		if (req->rate < (DIV_THRESHOLD / cpuclk->div))
 			return -EINVAL;
 

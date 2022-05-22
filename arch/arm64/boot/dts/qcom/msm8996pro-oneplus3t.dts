@@ -1,0 +1,38 @@
+// SPDX-License-Identifier: GPL-2.0-only
+
+/dts-v1/;
+
+#include "msm8996pro.dtsi"
+#include "msm8996-oneplus3.dtsi"
+
+/ {
+	model = "OnePlus 3T";
+	compatible = "oneplus,oneplus3t", "qcom,msm8996";
+	qcom,board-id = <8 0 15811 26>,
+			<8 0 15811 27>,
+			<8 0 15811 28>;
+	qcom,pmic-id = <0x20009 0x10013 0x0 0x0>;
+};
+
+&adsp_pil {
+	firmware-name = "qcom/msm8996/oneplus3t/adsp.mbn";
+};
+
+&gpu {
+	zap-shader {
+		firmware-name = "qcom/msm8996/oneplus3t/a530_zap.mbn";
+	};
+};
+
+&mss_pil {
+	firmware-name = "qcom/msm8996/oneplus3t/mba.mbn",
+			"qcom/msm8996/oneplus3t/modem.mbn";
+};
+
+&slpi_pil {
+	firmware-name = "qcom/msm8996/oneplus3t/slpi.mbn";
+};
+
+&venus {
+	firmware-name = "qcom/msm8996/oneplus3t/venus.mbn";
+};

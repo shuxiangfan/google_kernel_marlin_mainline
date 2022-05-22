@@ -29,6 +29,10 @@
 	compatible = "samsung,s6e3fc2x01";
 };
 
+&bq27441_fg {
+	monitored-battery = <&battery>;
+};
+
 &pmi8998_fg {
 	monitored-battery = <&battery>;
 };
